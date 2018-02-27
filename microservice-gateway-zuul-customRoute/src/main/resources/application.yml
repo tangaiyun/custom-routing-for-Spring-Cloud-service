@@ -1,0 +1,18 @@
+server:
+  port: 8060
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+  instance:
+    prefer-ip-address: true
+            
+microservice-provider-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.tay.customroute.MyCustomRule  
+microservice-provider-user2:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.tay.customroute.MyCustomRule    
