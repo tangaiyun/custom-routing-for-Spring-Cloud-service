@@ -94,7 +94,7 @@ public class MyCustomRule extends AbstractLoadBalancerRule {
 		}
 	}
 
-	private synchronized void loadConfig(String content) {
+	private void loadConfig(String content) {
 		try {
 			routeConfigProperties.load(new ByteArrayInputStream(content.getBytes()));
 			isCustomRouteEnable = Boolean.parseBoolean(routeConfigProperties.getProperty(ENABLE_KEY).trim());
